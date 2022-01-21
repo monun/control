@@ -1,11 +1,11 @@
 plugins {
-    kotlin("jvm") version "1.5.21"
-    kotlin("plugin.serialization") version "1.5.21"
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(16))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -24,7 +24,7 @@ dependencies {
 
     implementation(kotlin("stdlib"))
 //    implementation("io.github.monun:tap-api:4.1.3")
-    implementation("io.github.monun:kommand-api:2.6.6")
+    implementation("io.github.monun:kommand-api:2.8.1")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.2")

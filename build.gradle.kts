@@ -1,11 +1,11 @@
 plugins {
-    kotlin("jvm") version "1.5.21"
-    kotlin("plugin.serialization") version "1.5.21"
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(16))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -19,16 +19,10 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
-    compileOnly("io.papermc.paper:paper:1.17.1-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
 
     implementation(kotlin("stdlib"))
-//    implementation("io.github.monun:tap-api:4.1.3")
-    implementation("io.github.monun:kommand-api:2.6.6")
-
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.2")
-    testImplementation("org.mockito:mockito-core:3.6.28")
+    implementation("io.github.monun:kommand-api:2.10.0")
 }
 
 tasks {
@@ -39,14 +33,10 @@ tasks {
         }
     }
 
-    test {
-        useJUnitPlatform()
-    }
-
     create<Jar>("paperJar") {
-        from(sourceSets["main"].output)
-        archiveBaseName.set(project.extra.properties["pluginName"].toString())
+        archiveBaseName.set(project.name)
         archiveVersion.set("") // For bukkit plugin update
+        from(sourceSets["main"].output)
 
         doLast {
             copy {

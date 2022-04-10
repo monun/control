@@ -3,4 +3,4 @@ version: ${version}
 main: ${group}.${packageName}.plugin.${pluginName}Plugin
 api-version: 1.17
 libraries:
-  - io.github.monun:kommand:2.6.6
+  - io.github.monun:kommand-core:2.10.0

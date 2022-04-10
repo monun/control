@@ -13,6 +13,7 @@ class ControlPlugin : JavaPlugin() {
     private lateinit var controlFile: File
     private lateinit var controls: LinkedHashMap<Control<*>, Any>
 
+    @Suppress("UNUSED")
     fun <T> control(cc: Control<T>, option: T) {
         requireNotNull(option) { "Option cannot be null" }
         controls[cc] = option

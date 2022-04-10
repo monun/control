@@ -32,7 +32,7 @@ sealed class Control<T>(val name: String, val type: Class<*>, val default: T) {
     }
 
     companion object {
-        val values by lazy {
+        val values: ImmutableList<Control<Boolean>> by lazy {
             ImmutableList.of(
                 Chat,
                 Command,
